@@ -24,13 +24,20 @@ void queue_print (char *name, queue_t *queue, void print_elem (void*) ) {
 // - o elemento nao deve estar em outra fila
 // Retorno: 0 se sucesso, <0 se ocorreu algum erro
 }
-int queue_append (queue_t **queue, queue_t *elem) {
+int queue_append (queue_t **queue/* &first*/, queue_t *elem) {
     
      // Se a lista for vazia 
     //if (queue_size(queue) == 0){
-        printf("entrou");
-        queue = &elem;
-        printf(" queue %d",*queue); // acessando &elem
+        printf("queue pont antes %p \n",(*queue));
+        printf("elem pont na f %p \n",&elem);
+       // printf("entrou");
+        (*queue)= &elem; //
+        (*queue)->prev= &elem; 
+        (*queue)->next= &elem; 
+        
+
+        printf("queue pont dps %p \n",&(*queue));
+       printf(" queue %d \n",&(*queue)); // acessando &elem
         return 1;
     //}
 
@@ -50,5 +57,6 @@ int queue_append (queue_t **queue, queue_t *elem) {
 // Retorno: 0 se sucesso, <0 se ocorreu algum erro
 
 int queue_remove (queue_t **queue, queue_t *elem) {
+
 
 }
