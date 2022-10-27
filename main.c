@@ -3,11 +3,9 @@
 
 int main(){
 queue_t **teste;
-int elem = 6;
-queue_t * t= elem;
-queue_append(teste,t);
+queue_t * elem;
+int t = 6;
+elem = t;
+queue_append(teste,elem);
 
-int e = 8;
-queue_t * s= e;
-queue_append(teste,s);
 }
